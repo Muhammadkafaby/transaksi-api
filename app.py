@@ -112,5 +112,10 @@ def update_transaksi(id):
         return jsonify({'error': 'Transaksi tidak ditemukan'}), 404
     return jsonify({'message': 'Transaksi berhasil diperbarui', 'transaksi': updated_transaksi})
 
+# GET: Mendapatkan pesan tes (atau bisa dikembangkan untuk list transaksi)
+@app.route('/api/transaksi', methods=['GET'])
+def get_transaksi():
+    return jsonify({"message": "API is running!"})
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=PORT, debug=True)
